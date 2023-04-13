@@ -6,14 +6,14 @@ Vagrant + Oracle Linux 8 + Oracle Database 23c Free
 Download
 --------
 
-Download [Oracle Database 23c Free](https://www.oracle.com/database/technologies/free-downloads.html). Then place downloaded file in the same directory as the Vagrantfile.
+Download [Oracle Database 23c Free](https://www.oracle.com/database/technologies/free-downloads.html) and place downloaded file in the same directory as the Vagrantfile.
 
 * oracle-database-free-23c-1.0-1.el8.x86_64.rpm
 
 Configuration
 -------------
 
-Copy the file `dotenv.sample` to a file named `.env` and rewrite the contents as needed.
+Copy the `dotenv.sample` file to a new file named `.env` and modify the contents as needed.
 
 ```shell
 # SYS, SYSTEM and PDBADMIN password
@@ -39,7 +39,7 @@ When you run `vagrant up`, the following will work internally.
 vagrant up
 ```
 
-Example of use
+Example of Use
 --------------
 
 Connect to the guest OS.
@@ -62,7 +62,7 @@ sqlplus system/oracle@localhost/FREEPDB1
 SHOW CON_NAME
 -- If you have sample schemas installed
 SELECT JSON_OBJECT(*) FROM hr.employees WHERE rownum <= 3;
--- SELECT on expressions no longer require FROM dual
+-- SELECT on expressions no longer requires FROM dual
 SELECT 2*3;
 ```
 
